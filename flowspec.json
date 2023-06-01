@@ -93,6 +93,23 @@
       "id": "715cbb49-3a3e-4abf-90ee-2a98ff285b2b"
     },
     {
+      "type": "connector",
+      "accountLabel": "mysql",
+      "name": "sap-connector",
+      "stepName": "SAP (IDoc and RFC)",
+      "params": {
+        "failOnError": false,
+        "operation": "RFC",
+        "asHost": "localhost",
+        "lang": "en",
+        "client": "400",
+        "sysnr": "01",
+        "RFC": "YYPCL_RFC_ORDEM_FATURA",
+        "sapRequestTemplate": "<?xml version=\"1.0\" encoding=\"ASCII\"?><YYPCL_RFC_ORDEM_FATURA:Request xmlns:YYPCL_RFC_ORDEM_FATURA=\"http://sap.fusesource.org/rfc/QAS/YYPCL_RFC_ORDEM_FATURA\" P_ERDAT_INI=\"2018-07-01T00:00:00.000\" P_ERDAT_FIM=\"2018-08-01T00:00:00.000\" CLIENTE=\"\" VKORG=\"0050\" AUART=\"\" />"
+      },
+      "id": "c118a997-78f9-4288-ad4f-d1566e2e17dd"
+    },
+    {
       "operation": "GET",
       "scoped": false,
       "sessionType": "LOCAL",

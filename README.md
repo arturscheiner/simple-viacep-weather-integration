@@ -6,6 +6,7 @@ Adiciona o "greetings" com base na hora de entrada.
 Transforma o body em userinfo.
 Grava o userinfo na sessão.
 Acessa o VIA CEP
+SAP (IDoc and RFC)
 Recupera o userinfo da sessao
 De acordo com o retorno
 ```
