@@ -1,0 +1,537 @@
+{
+  "start": [
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Recebe o CEP e adiciona o timestamp da requisição",
+      "params": {
+        "json": "{\n    \"userinfo\" : {\n        \"cep\" : {{ message.queryAndPath.cep }},\n        \"requestTimestamp\": {{ NOW() }}\n    },\n    \"body\": {\n         \"cep\" : {{ message.queryAndPath.cep }},\n        \"requestTimestamp\": {{ NOW() }}, \n        \"requestHour\": {{ FORMATDATE(NOW(), \"timestamp\", \"HH\", null, \"GMT-3\", \"pt-BR\", null) }}\n    }\n\n}\n\n\n### Se existe consulta (marca data e hora da consulta) se não existe, cadastra",
+        "failOnError": false
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "9c8c71b1-76d3-4d46-a69b-298d83dcb7d7"
+    },
+    {
+      "type": "connector",
+      "name": "script-connector",
+      "stepName": "Adiciona o \"greetings\" com base na hora de entrada.",
+      "params": {
+        "code": "var hour = body.requestHour;\n\nif(hour>=6 && hour<12) {\n  output = {greetings: \"Bom Dia\"};\n}\nelse if(hour>+12 && hour<18) {\n  output = {greetings: \"Boa Tarde\"};\n}\nelse {\n  output = {greetings: \"Boa Noite\"};\n}\n\nfinalResult = Object.assign(body,output)\n\nbody",
+        "timeout": 10000
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "ca0553ad-defd-4621-8c29-43ee3a5bfbc7"
+    },
+    {
+      "type": "transformer",
+      "stepName": "Transforma o body em userinfo.",
+      "transformSpec": [
+        {
+          "operation": "shift",
+          "spec": {
+            "output": {
+              "*": "userinfo.&"
+            }
+          }
+        }
+      ],
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "d654e494-5e0b-4c5c-9c5a-db668260b15e"
+    },
+    {
+      "operation": "PUT",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Grava o userinfo na sessão.",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "b5989577-54a9-460a-9df3-5f7d00d27df1"
+    },
+    {
+      "params": {
+        "advanced": false,
+        "disableConnectionPool": false,
+        "compressBody": false,
+        "stopOnServerError": false,
+        "maxRetry": 0,
+        "sendBinaryFile": false,
+        "isInsecure": false,
+        "headers": "{\"Content-Type\":\"application/json\"}",
+        "operation": "GET",
+        "fileName": "",
+        "retry": false,
+        "responseCharset": "UTF-8",
+        "rawMode": false,
+        "readTimeout": 30000,
+        "invalidateSSLSessionsOnEveryCall": false,
+        "rawModeAsBase64": false,
+        "queryParams": "",
+        "url": "https://viacep.com.br/ws/{{ DEFAULT(message.userinfo.cep, \"00000-000\") }}/json/",
+        "connectTimeout": 30000,
+        "saveAsLocalFile": false,
+        "stopOnClientError": false,
+        "forceHttp1": false,
+        "overrideResponseCharset": true
+      },
+      "accountLabel": "",
+      "name": "rest-connector-v2",
+      "accountLabels": {
+        "custom-1": "",
+        "custom-2": ""
+      },
+      "stepName": "Acessa o VIA CEP",
+      "type": "connector",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "715cbb49-3a3e-4abf-90ee-2a98ff285b2b"
+    },
+    {
+      "operation": "GET",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Recupera o userinfo da sessao",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "7fab59b9-172e-408f-bc63-ddebf91f51c4"
+    },
+    {
+      "type": "choice",
+      "stepName": "De acordo com o retorno",
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "b339b4cb-478c-4776-af44-f5b58c3078d0",
+      "when": [
+        {
+          "target": "CEP Não Encontrado #Py2q38#",
+          "jsonPath": "$.[?(@.body.erro == \"true\")]"
+        }
+      ],
+      "otherwise": "CEP Encontrado com Sucesso #0UTtmO#"
+    }
+  ],
+  "CEP Não Encontrado #Py2q38#": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log de Erro na Busca cep",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "CEP Não Encontrado: {{ message.body.cep }}"
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "5d6101e2-7116-4502-b705-b11f7c46f7ca"
+    },
+    {
+      "type": "connector",
+      "name": "parallel-execution-connector",
+      "stepName": "Parallel Execution",
+      "params": {
+        "parallelExecutions": "[{\"description\":\"Erro 1\",\"executionId\":\"execution-1\",\"target\":\"120dd753-af79-4274-a151-b64340f6f0fb:dea44bc0-225c-4d4f-b178-480c7f5002e0\"},{\"description\":\"execution-2\",\"executionId\":\"execution-2\",\"target\":\"120dd753-af79-4274-a151-b64340f6f0fb:ca445397-cd2e-42fb-ab25-94d899b0c050\"}]"
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "120dd753-af79-4274-a151-b64340f6f0fb"
+    }
+  ],
+  "120dd753-af79-4274-a151-b64340f6f0fb:dea44bc0-225c-4d4f-b178-480c7f5002e0": [
+    {
+      "type": "connector",
+      "name": "throw-error-connector",
+      "stepName": "400 Bad Request",
+      "params": {
+        "errorMessage": "CEP Não Encontrado. \nO CEP: {{ message.body.cep }}",
+        "errorCode": "400",
+        "customErrorEnabled": false,
+        "failOnError": true
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "dea44bc0-225c-4d4f-b178-480c7f5002e0"
+    }
+  ],
+  "120dd753-af79-4274-a151-b64340f6f0fb:ca445397-cd2e-42fb-ab25-94d899b0c050": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "ca445397-cd2e-42fb-ab25-94d899b0c050"
+    }
+  ],
+  "CEP Encontrado com Sucesso #0UTtmO#": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log de Sucesso na Busca CEP",
+      "params": {
+        "logLevel": "INFO",
+        "message": "CEP Encontrado"
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "c502bd3a-2835-4821-830f-00fbc62dca7c"
+    },
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Tratamento de Dados",
+      "params": {
+        "json": "{\n    \"UF\": {{ message.body.uf }},\n    \"cidade\": {{ message.body.localidade }},\n    \"cep\": {{ message.body.cep }},\n    \"requestTimestamp\": {{ message.userinfo.requestTimestamp }},\n    \"greetings\": {{ message.userinfo.greetings }}\n}",
+        "failOnError": false
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "8f5baa09-87be-4188-8ced-fd1164647516"
+    },
+    {
+      "type": "transformer",
+      "stepName": "Adiciona Tratamento Gentil com base no estado/cidade.",
+      "transformSpec": [
+        {
+          "operation": "shift",
+          "spec": {
+            "*": "userinfo.&",
+            "@UF": "userinfo.UF",
+            "UF": {
+              "SP": {
+                "@(2,cidade)": {
+                  "São Paulo": {
+                    "#Paulista": "userinfo.gentile"
+                  },
+                  "*": {
+                    "#Paulistano": "userinfo.gentile"
+                  }
+                }
+              },
+              "RJ": {
+                "@(2,cidade)": {
+                  "Rio de Janeiro": {
+                    "#Carioca": "userinfo.gentile"
+                  },
+                  "*": {
+                    "#Fluminense": "userinfo.gentile"
+                  }
+                }
+              },
+              "AC": {
+                "#Acriano": "userinfo.gentile"
+              },
+              "AL": {
+                "#Alagoano": "userinfo.gentile"
+              },
+              "AP": {
+                "#Amapaense": "userinfo.gentile"
+              },
+              "AM": {
+                "#Amazonense": "userinfo.gentile"
+              },
+              "BA": {
+                "#Baiano": "userinfo.gentile"
+              },
+              "CE": {
+                "#Cearense": "userinfo.gentile"
+              },
+              "DF": {
+                "#Basiliense": "userinfo.gentile"
+              },
+              "ES": {
+                "#Capixaba": "userinfo.gentile"
+              },
+              "GO": {
+                "#Goiano": "userinfo.gentile"
+              },
+              "MA": {
+                "#Maranhense": "userinfo.gentile"
+              },
+              "MT": {
+                "#Mato-Grossense": "userinfo.gentile"
+              },
+              "MS": {
+                "#Sul-Mato-Grossense": "userinfo.gentile"
+              },
+              "MG": {
+                "#Mineiro": "userinfo.gentile"
+              },
+              "PA": {
+                "#Paraense": "userinfo.gentile"
+              },
+              "PB": {
+                "#Paraibano": "userinfo.gentile"
+              },
+              "PR": {
+                "#Paranaense": "userinfo.gentile"
+              },
+              "PE": {
+                "#Pernambucano": "userinfo.gentile"
+              },
+              "PI": {
+                "#Piauiense": "userinfo.gentile"
+              },
+              "RN": {
+                "#Potiguar": "userinfo.gentile"
+              },
+              "RS": {
+                "#Gaucho": "userinfo.gentile"
+              },
+              "RO": {
+                "#Rondoniano": "userinfo.gentile"
+              },
+              "RR": {
+                "#Roraimense": "userinfo.gentile"
+              },
+              "SC": {
+                "#Catarinense": "userinfo.gentile"
+              },
+              "SE": {
+                "#Sergipano": "userinfo.gentile"
+              },
+              "TO": {
+                "#Tocantinense": "userinfo.gentile"
+              }
+            }
+          }
+        }
+      ],
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "b5f94f87-0363-48fc-9103-242b8ef42c48"
+    },
+    {
+      "operation": "PUT",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Salva informações do usuário em Sessão",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "68d2a150-1110-4f24-b7f0-b142f093d328"
+    },
+    {
+      "params": {
+        "advanced": false,
+        "disableConnectionPool": false,
+        "compressBody": false,
+        "stopOnServerError": false,
+        "maxRetry": 0,
+        "sendBinaryFile": false,
+        "isInsecure": false,
+        "headers": "{\"Content-Type\":\"application/json\"}",
+        "operation": "GET",
+        "fileName": "",
+        "retry": false,
+        "responseCharset": "UTF-8",
+        "rawMode": false,
+        "readTimeout": 30000,
+        "invalidateSSLSessionsOnEveryCall": false,
+        "rawModeAsBase64": false,
+        "queryParams": "{\"q\":\"\\\"{{ message.userinfo.cidade }}\\\",\\\"{{ message.userinfo.UF }}\\\",BR\",\"appid\":\"b6bf0adc4a6610fdf952ef22a1507b9b\"}",
+        "url": "http://api.openweathermap.org/geo/1.0/direct",
+        "connectTimeout": 30000,
+        "saveAsLocalFile": false,
+        "stopOnClientError": false,
+        "forceHttp1": false,
+        "overrideResponseCharset": true
+      },
+      "accountLabel": "",
+      "name": "rest-connector-v2",
+      "accountLabels": {
+        "custom-1": "",
+        "custom-2": ""
+      },
+      "stepName": "Busca Longitude e Latitude",
+      "type": "connector",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "2492187d-855f-46fa-b656-3c8ff7eae0eb"
+    },
+    {
+      "operation": "GET",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Carrega informações do usuário",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "9bbb438b-c563-447f-b87b-f9f27f47ec34"
+    },
+    {
+      "type": "choice",
+      "stepName": "Choice",
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "516eca71-1eaf-4455-b367-01ed674417d5",
+      "when": [
+        {
+          "target": "Longitude Não Encontrado #eKXbiV#",
+          "jsonPath": "$.[?(@.body.erro == \"true\")]"
+        }
+      ],
+      "otherwise": "Longitude Encontrado com Sucesso #vwTalh#"
+    }
+  ],
+  "Longitude Não Encontrado #eKXbiV#": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log de Erro na Busca cep",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "CEP Não Encontrado: {{ message.body.cep }}"
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "26083635-13fc-42f1-9b18-a9389d1bfe55"
+    }
+  ],
+  "Longitude Encontrado com Sucesso #vwTalh#": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log de Sucesso na Busca CEP",
+      "params": {
+        "logLevel": "INFO",
+        "message": "CEP Encontrado"
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "ed56456f-607a-41eb-9bb5-92996f8e671e"
+    },
+    {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Adiciona mais algumas informações no userinfo",
+      "params": {
+        "json": "{\n  \"userinfo\" : {\n    \"lat\": {{ message.body[0].lat }},\n    \"lon\": {{ message.body[0].lon }},\n    \"country\": {{ message.body[0].country }},\n    \"stateName\": {{ message.body[0].state }},\n    \"state\": {{ message.userinfo.UF }},\n    \"gentile\": {{ message.userinfo.gentile }},\n    \"city\": {{ message.userinfo.cidade }},\n    \"zipCode\": {{ message.userinfo.cep }},\n    \"greetings\": {{ message.userinfo.greetings }},\n    \"requestTimestamp\": {{ message.userinfo.requestTimestamp }}\n  }\n}",
+        "failOnError": false
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "d81c6b3c-4572-415f-b81e-b62145c3f8e3"
+    },
+    {
+      "operation": "PUT",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Salvar Informações do Usuário em Sessão",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "5faa4103-0762-4ef4-9b88-ca70e3d1a67f"
+    },
+    {
+      "params": {
+        "advanced": false,
+        "disableConnectionPool": false,
+        "compressBody": false,
+        "stopOnServerError": false,
+        "maxRetry": 0,
+        "sendBinaryFile": false,
+        "isInsecure": false,
+        "headers": "{\"Content-Type\":\"application/json\"}",
+        "operation": "GET",
+        "fileName": "",
+        "retry": false,
+        "responseCharset": "UTF-8",
+        "rawMode": false,
+        "readTimeout": 30000,
+        "invalidateSSLSessionsOnEveryCall": false,
+        "rawModeAsBase64": false,
+        "queryParams": "{\"lat\":\"{{ message.userinfo.lat }}\",\"lon\":\"{{ message.userinfo.lon }}\",\"appid\":\"b6bf0adc4a6610fdf952ef22a1507b9b\",\"units\":\"metric\"}",
+        "url": "https://api.openweathermap.org/data/2.5/forecast",
+        "connectTimeout": 30000,
+        "saveAsLocalFile": false,
+        "stopOnClientError": false,
+        "forceHttp1": false,
+        "overrideResponseCharset": true
+      },
+      "accountLabel": "",
+      "name": "rest-connector-v2",
+      "accountLabels": {
+        "custom-1": "",
+        "custom-2": ""
+      },
+      "stepName": "OpenWeather",
+      "type": "connector",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "2d5ec0a1-7b47-4e3a-b1ef-ed543cd8aec5"
+    },
+    {
+      "operation": "GET",
+      "scoped": false,
+      "sessionType": "LOCAL",
+      "stepName": "Carrega Informações do Usuário da Sessão",
+      "fields": [
+        "userinfo"
+      ],
+      "type": "session-management",
+      "onExceptionTrack": null,
+      "onProcessTrack": null,
+      "id": "21d8645b-6d22-4724-8efa-9bbb5241c318"
+    },
+    {
+      "type": "transformer",
+      "stepName": "Transforma o Retorno do Forecast",
+      "transformSpec": [
+        {
+          "operation": "shift",
+          "spec": {
+            "userinfo": {
+              "*": "&"
+            },
+            "body": {
+              "list": {
+                "*": {
+                  "dt": "forecast[&1].timestamp",
+                  "dt_txt": "forecast[&1].date",
+                  "@(main.temp)": "forecast[&1].temp",
+                  "@(main.temp_min)": "forecast[&1].minTemperature",
+                  "@(main.temp_max)": "forecast[&1].maxTemperature",
+                  "@(weather[0].main)": "forecast[&1].weatherMain",
+                  "@(weather[0].description)": "forecast[&1].weatherDescription"
+                }
+              }
+            }
+          }
+        },
+        {
+          "operation": "modify-default-beta",
+          "spec": {
+            "forecast": {
+              "*": {
+                "weatherConditions": "=concat(@(1,weatherMain),' (',@(1,weatherDescription),),)"
+              }
+            }
+          }
+        }
+      ],
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "b8a03000-5823-42cd-b14d-ce4d5c1f8084"
+    }
+  ]
+}
