@@ -175,33 +175,6 @@
         "commit_description": "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."
       },
       "id": "8f735890-29ee-478a-9dd7-93ccecba7618"
-    },
-    {
-      "type": "connector",
-      "name": "parallel-execution-connector",
-      "stepName": "Parallel Execution",
-      "params": {
-        "parallelExecutions": "[{\"description\":\"Erro 1\",\"executionId\":\"execution-1\",\"target\":\"120dd753-af79-4274-a151-b64340f6f0fb:dea44bc0-225c-4d4f-b178-480c7f5002e0\"}]"
-      },
-      "onProcessTrack": null,
-      "onExceptionTrack": null,
-      "id": "120dd753-af79-4274-a151-b64340f6f0fb"
-    }
-  ],
-  "120dd753-af79-4274-a151-b64340f6f0fb:dea44bc0-225c-4d4f-b178-480c7f5002e0": [
-    {
-      "type": "connector",
-      "name": "throw-error-connector",
-      "stepName": "400 Bad Request",
-      "params": {
-        "errorMessage": "CEP Não Encontrado. \nO CEP: {{ message.body.cep }}",
-        "errorCode": "400",
-        "customErrorEnabled": false,
-        "failOnError": true
-      },
-      "onProcessTrack": null,
-      "onExceptionTrack": null,
-      "id": "dea44bc0-225c-4d4f-b178-480c7f5002e0"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [
