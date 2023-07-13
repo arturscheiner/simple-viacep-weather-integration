@@ -1,6 +1,4 @@
-## This is the pipeline simple-viacep-weather-integration README:
-## This is the pipeline components tree:
-```bash
+```
 ├── 00-Mocked Payload Data (json-generator-connector)
 ├── 01-Bilhetagema (event-publisher-connector)
 ├── 02-Recebe o CEP e adiciona o timestamp da requisição (json-generator-connector)
