@@ -166,7 +166,7 @@
       "stepName": "Git Config",
       "params": {
         "gitbranch": "main",
-        "gitmerge": false,
+        "gitmerge": true,
         "gittags": [
           "viacep",
           "weather"
