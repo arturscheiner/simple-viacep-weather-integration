@@ -11,6 +11,27 @@
       "id": "3848aec7-f639-4036-a735-0de702ce8e05"
     },
     {
+      "type": "capsule",
+      "name": "capsule-v1-demo-devops-commit-message-2.0",
+      "capsuleCollection": "devops",
+      "capsuleCollectionVersion": 1,
+      "capsule": "commit-message-2.0",
+      "capsuleVersionMajor": 2,
+      "capsuleVersionMinor": 0,
+      "stepName": "Git Config",
+      "params": {
+        "gitbranch": "main",
+        "gitmerge": true,
+        "gittags": [
+          "viacep",
+          "weather"
+        ],
+        "commit_summary": "Novo commit no sistema",
+        "commit_description": "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."
+      },
+      "id": "8f735890-29ee-478a-9dd7-93ccecba7618"
+    },
+    {
       "type": "connector",
       "stepName": "Bilhetagema",
       "name": "event-publisher-connector",
@@ -154,27 +175,6 @@
       "onProcessTrack": null,
       "onExceptionTrack": null,
       "id": "5d6101e2-7116-4502-b705-b11f7c46f7ca"
-    },
-    {
-      "type": "capsule",
-      "name": "capsule-v1-demo-devops-commit-message-2.0",
-      "capsuleCollection": "devops",
-      "capsuleCollectionVersion": 1,
-      "capsule": "commit-message-2.0",
-      "capsuleVersionMajor": 2,
-      "capsuleVersionMinor": 0,
-      "stepName": "Git Config",
-      "params": {
-        "gitbranch": "main",
-        "gitmerge": true,
-        "gittags": [
-          "viacep",
-          "weather"
-        ],
-        "commit_summary": "Novo commit no sistema",
-        "commit_description": "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."
-      },
-      "id": "8f735890-29ee-478a-9dd7-93ccecba7618"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [
