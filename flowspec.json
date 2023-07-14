@@ -1,6 +1,16 @@
 {
   "start": [
     {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "Mocked Payload Data",
+      "params": {
+        "json": "{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"07500-000\"\n }\n}",
+        "failOnError": false
+      },
+      "id": "3848aec7-f639-4036-a735-0de702ce8e05"
+    },
+    {
       "type": "capsule",
       "name": "capsule-v1-demo-devops-commit-message-2.0",
       "capsuleCollection": "devops",
