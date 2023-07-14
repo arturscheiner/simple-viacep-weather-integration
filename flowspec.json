@@ -204,7 +204,7 @@
     },
     {
       "type": "transformer",
-      "stepName": "Adiciona Tratamento Gentil com base no estado/cidade.",
+      "stepName": "Adiciona Tratamento Gentil com base no estado-cidade.",
       "transformSpec": [
         {
           "operation": "shift",

@@ -14,8 +14,7 @@
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
         ├── 00-Log de Sucesso na Busca CEP (log-connector)
         ├── 01-Tratamento de Dados (json-generator-connector)
-        ├── 02-Adiciona Tratamento Gentil com base no estado
-        │   └── cidade. (transformer)
+        ├── 02-Adiciona Tratamento Gentil com base no estado-cidade. (transformer)
         ├── 03-Salva informações do usuário em Sessão (session-management)
         ├── 04-Busca Longitude e Latitude (rest-connector-v2)
         ├── 05-Carrega informações do usuário (session-management)
