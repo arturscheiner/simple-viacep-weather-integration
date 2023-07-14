@@ -33,7 +33,7 @@
     },
     {
       "type": "connector",
-      "stepName": "Bilhetagema",
+      "stepName": "Bilhetagem",
       "name": "event-publisher-connector",
       "params": {
         "eventName": "{{ DEFAULT(message.eventName, \"billing-control\") }}",

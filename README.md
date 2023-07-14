@@ -3,7 +3,7 @@
 ```bash
 ├── 00-Mocked Payload Data (json-generator-connector)
 ├── 01-Git Config (capsule-v1-demo-devops-commit-message-2.0)
-├── 02-Bilhetagema (event-publisher-connector)
+├── 02-Bilhetagem (event-publisher-connector)
 ├── 03-Recebe o CEP e adiciona o timestamp da requisição (json-generator-connector)
 ├── 04-Adiciona o "greetings" com base na hora de entrada. (script-connector)
 ├── 05-Transforma o body em userinfo. (transformer)
