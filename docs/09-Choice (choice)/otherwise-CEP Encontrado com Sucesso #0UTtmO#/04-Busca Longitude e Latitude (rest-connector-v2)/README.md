@@ -1,4 +1,3 @@
-estou aqui
 # Step Name -> Busca Longitude e Latitude
 ## Connector Denominator -> generic
 

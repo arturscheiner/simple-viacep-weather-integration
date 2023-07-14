@@ -1,4 +1,3 @@
-estou aqui
 # Step Name -> OpenWeather
 ## Connector Denominator -> generic
 

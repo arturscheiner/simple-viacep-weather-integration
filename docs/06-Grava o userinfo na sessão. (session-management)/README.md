@@ -1,4 +1,3 @@
-estou aqui
 # Step Name -> Grava o userinfo na sessão.
 ## Connector Denominator -> generic
 
@@ -10,6 +9,51 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 
 ## Component Configuration Details
 ### Parameters
+
+* fields
+```
+["userinfo"]
+```
+
+* id
+```
+b5989577-54a9-460a-9df3-5f7d00d27df1
+```
+
+* onExceptionTrack
+```
+null
+```
+
+* onProcessTrack
+```
+null
+```
+
+* operation
+```
+PUT
+```
+
+* scoped
+```
+false
+```
+
+* sessionType
+```
+LOCAL
+```
+
+* stepName
+```
+Grava o userinfo na sessão.
+```
+
+* type
+```
+session-management
+```
 
 
 ## RAW Object

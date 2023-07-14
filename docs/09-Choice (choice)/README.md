@@ -1,4 +1,3 @@
-estou aqui
 # Step Name -> Choice
 ## Connector Denominator -> generic
 
@@ -10,6 +9,41 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 
 ## Component Configuration Details
 ### Parameters
+
+* id
+```
+b339b4cb-478c-4776-af44-f5b58c3078d0
+```
+
+* onExceptionTrack
+```
+null
+```
+
+* onProcessTrack
+```
+null
+```
+
+* otherwise
+```
+CEP Encontrado com Sucesso #0UTtmO#
+```
+
+* stepName
+```
+Choice
+```
+
+* type
+```
+choice
+```
+
+* when
+```
+[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"}]
+```
 
 
 ## RAW Object

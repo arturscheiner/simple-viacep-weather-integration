@@ -1,4 +1,3 @@
-estou aqui
 # Step Name -> Carrega Informações do Usuário da Sessão
 ## Connector Denominator -> generic
 
@@ -10,6 +9,51 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 
 ## Component Configuration Details
 ### Parameters
+
+* fields
+```
+["userinfo"]
+```
+
+* id
+```
+21d8645b-6d22-4724-8efa-9bbb5241c318
+```
+
+* onExceptionTrack
+```
+null
+```
+
+* onProcessTrack
+```
+null
+```
+
+* operation
+```
+GET
+```
+
+* scoped
+```
+false
+```
+
+* sessionType
+```
+LOCAL
+```
+
+* stepName
+```
+Carrega Informações do Usuário da Sessão
+```
+
+* type
+```
+session-management
+```
 
 
 ## RAW Object
