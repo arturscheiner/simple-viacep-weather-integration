@@ -1,14 +1,13 @@
 ```
-├── 00-Mocked Payload Data (json-generator-connector)
-├── 01-Git Config (capsule-v1-demo-devops-commit-message-2.0)
-├── 02-Bilhetagem (event-publisher-connector)
-├── 03-Recebe o CEP e adiciona o timestamp da requisição (json-generator-connector)
-├── 04-Adiciona o "greetings" com base na hora de entrada. (script-connector)
-├── 05-Transforma o body em userinfo. (transformer)
-├── 06-Grava o userinfo na sessão. (session-management)
-├── 07-Acessa o VIA CEP (rest-connector-v2)
-├── 08-Recupera o userinfo da sessao (session-management)
-└── 09-Choice (choice)
+├── 00-Git Config (capsule-v1-demo-devops-commit-message-2.0)
+├── 01-Bilhetagem (event-publisher-connector)
+├── 02-Recebe o CEP e adiciona o timestamp da requisição (json-generator-connector)
+├── 03-Adiciona o "greetings" com base na hora de entrada. (script-connector)
+├── 04-Transforma o body em userinfo. (transformer)
+├── 05-Grava o userinfo na sessão. (session-management)
+├── 06-Acessa o VIA CEP (rest-connector-v2)
+├── 07-Recupera o userinfo da sessao (session-management)
+└── 08-Choice (choice)
     ├── when-CEP Não Encontrado #Py2q38#
     │   └── 00-Log de Erro na Busca cep (log-connector)
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
