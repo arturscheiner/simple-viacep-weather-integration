@@ -4,5 +4,8 @@
   "version" : "1.13",
   "checksum" : "b8f7c",
   "summary" : "Novo commit no sistema",
-  "description" : "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."
+  "description" : "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail.",
+  "size": "SMALL",
+  "replicas": "1",
+  "consumers": "10"
 }
