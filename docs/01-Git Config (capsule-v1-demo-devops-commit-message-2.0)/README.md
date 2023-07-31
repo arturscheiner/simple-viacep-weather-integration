@@ -15,7 +15,7 @@ Ultimately, the trick to structuring an exceptional commit message is to find th
 
 * commit_summary
 ```
-Novo commit no sistema
+Novo commit no sistema listado novo
 ```
 
 * gitbranch
@@ -37,5 +37,5 @@ true
 ## RAW Object
 
 ```
-{"type":"capsule","name":"capsule-v1-demo-devops-commit-message-2.0","capsuleCollection":"devops","capsuleCollectionVersion":1,"capsule":"commit-message-2.0","capsuleVersionMajor":2,"capsuleVersionMinor":0,"stepName":"Git Config","params":{"gitbranch":"main","gitmerge":true,"gittags":["viacep","weather"],"commit_summary":"Novo commit no sistema","commit_description":"Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."},"id":"8f735890-29ee-478a-9dd7-93ccecba7618"}
+{"type":"capsule","name":"capsule-v1-demo-devops-commit-message-2.0","capsuleCollection":"devops","capsuleCollectionVersion":1,"capsule":"commit-message-2.0","capsuleVersionMajor":2,"capsuleVersionMinor":0,"stepName":"Git Config","params":{"gitbranch":"main","gitmerge":true,"gittags":["viacep","weather"],"commit_summary":"Novo commit no sistema listado novo","commit_description":"Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."},"id":"8f735890-29ee-478a-9dd7-93ccecba7618"}
 ```
