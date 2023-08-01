@@ -1,6 +1,4 @@
-## This is the pipeline simple-viacep-weather-integration README:
-## This is the pipeline components tree:
-```bash
+```
 ├── 00-Mocked Payload Data (json-generator-connector)
 ├── 01-Git Config (capsule-v1-demo-devops-commit-message-2.0)
 ├── 02-Bilhetagem (event-publisher-connector)
