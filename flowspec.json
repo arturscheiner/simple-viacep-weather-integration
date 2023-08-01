@@ -5,10 +5,11 @@
       "type": "connector",
       "stepName": "Mocked Payload Data",
       "params": {
-        "json": "{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"12230-000\"\n }\n}",
+        "json": "{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"12230-087\"\n }\n}",
         "failOnError": false
       },
-      "id": "3848aec7-f639-4036-a735-0de702ce8e05"
+      "id": "3848aec7-f639-4036-a735-0de702ce8e05",
+      "__documentation__": ""
     },
     {
       "type": "capsule",
