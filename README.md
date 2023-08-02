@@ -12,7 +12,8 @@
 ├── 08-Recupera o userinfo da sessao (session-management)
 └── 09-Choice (choice)
     ├── when-CEP Não Encontrado #Py2q38#
-    │   └── 00-Log de Erro na Busca cep (log-connector)
+    │   ├── 00-Log de Erro na Busca cep (log-connector)
+    │   └── 01-Throw Error (throw-error-connector)
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
         ├── 00-Log de Sucesso na Busca CEP (log-connector)
         ├── 01-Tratamento de Dados (json-generator-connector)
