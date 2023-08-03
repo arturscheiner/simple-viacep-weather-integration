@@ -12,7 +12,7 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 
 * id
 ```
-c369090d-29a8-407c-8f5c-12db335d7f84
+823073a2-a94b-4dba-a326-1fd82c2e171b
 ```
 
 * name
@@ -39,5 +39,5 @@ connector
 ## RAW Object
 
 ```
-{"type":"connector","name":"throw-error-connector","stepName":"Throw Error","params":{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false},"id":"c369090d-29a8-407c-8f5c-12db335d7f84"}
+{"type":"connector","name":"throw-error-connector","stepName":"Throw Error","params":{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false},"id":"823073a2-a94b-4dba-a326-1fd82c2e171b"}
 ```

@@ -1,4 +1,4 @@
-# Step Name -> Log de Sucesso na Busca CEP
+# Step Name -> Log
 ## Connector Denominator -> log-connector
 
 ## Description
@@ -12,17 +12,17 @@ Check this component official documentation: [log-connector](https://docs.digibe
 
 * logLevel
 ```
-INFO
+ERROR
 ```
 
 * message
 ```
-CEP Encontrado
+Error processing message {{ message.$.myField }}
 ```
 
 
 ## RAW Object
 
 ```
-{"type":"connector","name":"log-connector","stepName":"Log de Sucesso na Busca CEP","params":{"logLevel":"INFO","message":"CEP Encontrado"},"onProcessTrack":null,"onExceptionTrack":null,"id":"ed56456f-607a-41eb-9bb5-92996f8e671e"}
+{"type":"connector","name":"log-connector","stepName":"Log","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"a7756975-b029-40f5-a7bb-23234f15dcaf"}
 ```
