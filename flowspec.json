@@ -163,6 +163,10 @@
         {
           "target": "condition-1",
           "jsonPath": "$"
+        },
+        {
+          "target": "condition-2",
+          "jsonPath": "$"
         }
       ],
       "otherwise": "CEP Encontrado com Sucesso #0UTtmO#"
@@ -251,6 +255,66 @@
         "message": "Error processing message {{ message.$.myField }}"
       },
       "id": "55941602-a988-45d8-b6d9-7c8d475621b6"
+    }
+  ],
+  "condition-2": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "a0fd446d-6756-4636-8007-ec57f6687ad4"
+    },
+    {
+      "type": "connector",
+      "accountLabel": "mysql",
+      "name": "sap-connector",
+      "stepName": "SAP (IDoc and RFC)",
+      "params": {
+        "failOnError": false,
+        "operation": "RFC",
+        "asHost": "localhost",
+        "lang": "en",
+        "client": "400",
+        "sysnr": "01",
+        "RFC": "YYPCL_RFC_ORDEM_FATURA",
+        "sapRequestTemplate": "<?xml version=\"1.0\" encoding=\"ASCII\"?><YYPCL_RFC_ORDEM_FATURA:Request xmlns:YYPCL_RFC_ORDEM_FATURA=\"http://sap.fusesource.org/rfc/QAS/YYPCL_RFC_ORDEM_FATURA\" P_ERDAT_INI=\"2018-07-01T00:00:00.000\" P_ERDAT_FIM=\"2018-08-01T00:00:00.000\" CLIENTE=\"\" VKORG=\"0050\" AUART=\"\" />"
+      },
+      "id": "72e0db74-5009-4176-bf34-de4e6423c4b2"
+    },
+    {
+      "type": "connector",
+      "name": "dropbox-connector",
+      "stepName": "Dropbox",
+      "accountLabel": "dropbox",
+      "params": {
+        "remotePath": "/data.csv",
+        "operation": "download",
+        "localFile": "test.txt"
+      },
+      "id": "8fb8464f-e99a-4686-aaea-1a78d39d85f7"
+    },
+    {
+      "type": "connector",
+      "name": "google-drive-connector",
+      "accountLabels": {
+        "google": "private"
+      },
+      "stepName": "Google Drive",
+      "params": {
+        "projectId": "digibee-test",
+        "folderId": "",
+        "fileType": "application/octet-stream",
+        "remoteFileName": "test",
+        "operation": "upload",
+        "updateFile": false,
+        "fileName": "test",
+        "failOnError": false
+      },
+      "id": "8cd0343b-823d-4974-8669-93822eac3076"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [

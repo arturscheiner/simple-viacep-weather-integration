@@ -18,6 +18,11 @@
     │   ├── 01-WGet (Download HTTP) (wget-connector)
     │   ├── 02-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
     │   └── 03-Log (log-connector)
+    ├── when-condition-2
+    │   ├── 00-Log (log-connector)
+    │   ├── 01-SAP (IDoc and RFC) (sap-connector)
+    │   ├── 02-Dropbox (dropbox-connector)
+    │   └── 03-Google Drive (google-drive-connector)
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
         ├── 00-Log de Sucesso na Busca CEP (log-connector)
         ├── 01-Tratamento de Dados (json-generator-connector)

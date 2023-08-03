@@ -42,12 +42,12 @@ choice
 
 * when
 ```
-[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"},{"target":"condition-1","jsonPath":"$"}]
+[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"},{"target":"condition-1","jsonPath":"$"},{"target":"condition-2","jsonPath":"$"}]
 ```
 
 
 ## RAW Object
 
 ```
-{"type":"choice","stepName":"Choice","onProcessTrack":null,"onExceptionTrack":null,"id":"b339b4cb-478c-4776-af44-f5b58c3078d0","when":[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"},{"target":"condition-1","jsonPath":"$"}],"otherwise":"CEP Encontrado com Sucesso #0UTtmO#"}
+{"type":"choice","stepName":"Choice","onProcessTrack":null,"onExceptionTrack":null,"id":"b339b4cb-478c-4776-af44-f5b58c3078d0","when":[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"},{"target":"condition-1","jsonPath":"$"},{"target":"condition-2","jsonPath":"$"}],"otherwise":"CEP Encontrado com Sucesso #0UTtmO#"}
 ```
