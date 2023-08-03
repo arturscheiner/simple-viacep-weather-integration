@@ -1,4 +1,4 @@
-# Step Name -> Recupera o userinfo da sessao
+# Step Name -> Throw Error
 ## Connector Denominator -> generic
 
 ## Description
@@ -10,54 +10,34 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 ## Component Configuration Details
 ### Parameters
 
-* fields
-```
-["userinfo"]
-```
-
 * id
 ```
-7fab59b9-172e-408f-bc63-ddebf91f51c4
+f14c1e0b-5cc3-4199-92ab-ad3a1c4c3960
 ```
 
-* onExceptionTrack
+* name
 ```
-null
-```
-
-* onProcessTrack
-```
-null
+throw-error-connector
 ```
 
-* operation
+* params
 ```
-GET
-```
-
-* scoped
-```
-false
-```
-
-* sessionType
-```
-LOCAL
+{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false}
 ```
 
 * stepName
 ```
-Recupera o userinfo da sessao
+Throw Error
 ```
 
 * type
 ```
-session-management
+connector
 ```
 
 
 ## RAW Object
 
 ```
-{"operation":"GET","scoped":false,"sessionType":"LOCAL","stepName":"Recupera o userinfo da sessao","fields":["userinfo"],"type":"session-management","onExceptionTrack":null,"onProcessTrack":null,"id":"7fab59b9-172e-408f-bc63-ddebf91f51c4"}
+{"type":"connector","name":"throw-error-connector","stepName":"Throw Error","params":{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false},"id":"f14c1e0b-5cc3-4199-92ab-ad3a1c4c3960"}
 ```

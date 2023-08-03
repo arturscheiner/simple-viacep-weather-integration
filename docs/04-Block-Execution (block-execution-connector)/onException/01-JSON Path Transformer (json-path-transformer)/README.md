@@ -1,4 +1,4 @@
-# Step Name -> Carrega informações do usuário
+# Step Name -> JSON Path Transformer
 ## Connector Denominator -> generic
 
 ## Description
@@ -10,54 +10,34 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 ## Component Configuration Details
 ### Parameters
 
-* fields
-```
-["userinfo"]
-```
-
-* id
-```
-9bbb438b-c563-447f-b87b-f9f27f47ec34
-```
-
-* onExceptionTrack
-```
-null
-```
-
-* onProcessTrack
-```
-null
-```
-
-* operation
-```
-GET
-```
-
-* scoped
+* failOnError
 ```
 false
 ```
 
-* sessionType
+* id
 ```
-LOCAL
+548788f6-5f2f-4204-b06e-420bcb5fdc0f
+```
+
+* jsonPath
+```
+$.store.books[?(@.title=='IT')]
 ```
 
 * stepName
 ```
-Carrega informações do usuário
+JSON Path Transformer
 ```
 
 * type
 ```
-session-management
+json-path-transformer
 ```
 
 
 ## RAW Object
 
 ```
-{"operation":"GET","scoped":false,"sessionType":"LOCAL","stepName":"Carrega informações do usuário","fields":["userinfo"],"type":"session-management","onExceptionTrack":null,"onProcessTrack":null,"id":"9bbb438b-c563-447f-b87b-f9f27f47ec34"}
+{"type":"json-path-transformer","stepName":"JSON Path Transformer","jsonPath":"$.store.books[?(@.title=='IT')]","failOnError":false,"id":"548788f6-5f2f-4204-b06e-420bcb5fdc0f"}
 ```

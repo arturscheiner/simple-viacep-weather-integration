@@ -1,4 +1,4 @@
-# Step Name -> Choice
+# Step Name -> Throw Error
 ## Connector Denominator -> generic
 
 ## Description
@@ -12,42 +12,32 @@ Check Digibee's official documentation: [generic](https://docs.digibee.com/docum
 
 * id
 ```
-b339b4cb-478c-4776-af44-f5b58c3078d0
+823073a2-a94b-4dba-a326-1fd82c2e171b
 ```
 
-* onExceptionTrack
+* name
 ```
-null
-```
-
-* onProcessTrack
-```
-null
+throw-error-connector
 ```
 
-* otherwise
+* params
 ```
-CEP Encontrado com Sucesso #0UTtmO#
+{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false}
 ```
 
 * stepName
 ```
-Choice
+Throw Error
 ```
 
 * type
 ```
-choice
-```
-
-* when
-```
-[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"}]
+connector
 ```
 
 
 ## RAW Object
 
 ```
-{"type":"choice","stepName":"Choice","onProcessTrack":null,"onExceptionTrack":null,"id":"b339b4cb-478c-4776-af44-f5b58c3078d0","when":[{"target":"CEP Não Encontrado #Py2q38#","jsonPath":"$.[?(@.body.erro == \"true\")]"}],"otherwise":"CEP Encontrado com Sucesso #0UTtmO#"}
+{"type":"connector","name":"throw-error-connector","stepName":"Throw Error","params":{"errorMessage":"Error occurred.","errorCode":500,"customErrorEnabled":false},"id":"823073a2-a94b-4dba-a326-1fd82c2e171b"}
 ```

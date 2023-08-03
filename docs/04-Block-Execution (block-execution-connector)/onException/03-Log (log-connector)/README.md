@@ -1,4 +1,4 @@
-# Step Name -> Log de Erro na Busca cep
+# Step Name -> Log
 ## Connector Denominator -> log-connector
 
 ## Description
@@ -17,12 +17,12 @@ ERROR
 
 * message
 ```
-CEP Não Encontrado: {{ message.body.cep }}
+Error processing message {{ message.$.myField }}
 ```
 
 
 ## RAW Object
 
 ```
-{"type":"connector","name":"log-connector","stepName":"Log de Erro na Busca cep","params":{"logLevel":"ERROR","message":"CEP Não Encontrado: {{ message.body.cep }}"},"onProcessTrack":null,"onExceptionTrack":null,"id":"5d6101e2-7116-4502-b705-b11f7c46f7ca"}
+{"type":"connector","name":"log-connector","stepName":"Log","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"d0e34384-c138-4673-b745-d5a03e0549fa"}
 ```
