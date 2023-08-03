@@ -97,6 +97,27 @@
       "jsonPath": "$.store.books[?(@.title=='IT')]",
       "failOnError": false,
       "id": "548788f6-5f2f-4204-b06e-420bcb5fdc0f"
+    },
+    {
+      "type": "connector",
+      "name": "throw-error-connector",
+      "stepName": "Throw Error",
+      "params": {
+        "errorMessage": "Error occurred.",
+        "errorCode": 500,
+        "customErrorEnabled": false
+      },
+      "id": "f14c1e0b-5cc3-4199-92ab-ad3a1c4c3960"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "d0e34384-c138-4673-b745-d5a03e0549fa"
     }
   ]
 }
