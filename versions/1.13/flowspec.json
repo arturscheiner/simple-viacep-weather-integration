@@ -65,6 +65,18 @@
         "onException": "3621921d-71ac-4c22-b5a8-8225c7d9e106-onExceptionTrack"
       },
       "id": "3621921d-71ac-4c22-b5a8-8225c7d9e106"
+    },
+    {
+      "type": "connector",
+      "name": "script-connector",
+      "stepName": "Adiciona o \"greetings\" com base na hora de entrada.",
+      "params": {
+        "code": "var hour = body.requestHour;\n\nif(hour>=6 && hour<12) {\n output = {greetings: \"Bom Dia\"};\n}\nelse if(hour>+12 && hour<18) {\n output = {greetings: \"Boa Tarde\"};\n}\nelse {\n output = {greetings: \"Boa Noite\"};\n}\n\nfinalResult = Object.assign(body,output)\n\nbody",
+        "timeout": 10000
+      },
+      "onProcessTrack": null,
+      "onExceptionTrack": null,
+      "id": "ca0553ad-defd-4621-8c29-43ee3a5bfbc7"
     }
   ],
   "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack": [
