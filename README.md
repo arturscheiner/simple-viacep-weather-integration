@@ -18,7 +18,8 @@
     ├── when-condition-1
     │   ├── 00-Log (log-connector)
     │   ├── 01-WGet (Download HTTP) (wget-connector)
-    │   └── 02-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
+    │   ├── 02-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
+    │   └── 03-Log (log-connector)
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
         ├── 00-Log de Sucesso na Busca CEP (log-connector)
         ├── 01-Tratamento de Dados (json-generator-connector)

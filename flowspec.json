@@ -241,6 +241,16 @@
         "failOnError": false
       },
       "id": "76d98803-4345-4f25-a890-4c5fe4ebe1d5"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "55941602-a988-45d8-b6d9-7c8d475621b6"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [
