@@ -9,6 +9,8 @@
 ├── 05-Transforma o body em userinfo. (transformer)
 ├── 06-Grava o userinfo na sessão. (session-management)
 ├── 07-Acessa o VIA CEP (rest-connector-v2)
-└── 08-Recupera o userinfo da sessao (session-management)
+├── 08-Recupera o userinfo da sessao (session-management)
+├── 09-Log (log-connector)
+└── 10-Log (log-connector)
 
 ```
