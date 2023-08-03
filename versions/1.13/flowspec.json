@@ -191,6 +191,16 @@
         "customErrorEnabled": false
       },
       "id": "c369090d-29a8-407c-8f5c-12db335d7f84"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "316d65d7-79d6-4c61-9c41-0aa2fcb20279"
     }
   ],
   "condition-1": [
@@ -216,6 +226,21 @@
         "failOnError": false
       },
       "id": "689a0703-69af-4f80-b85d-b7f0aad2115a"
+    },
+    {
+      "type": "connector",
+      "name": "Azure-Blob-Storage-Connector",
+      "stepName": "Blob Storage (Azure)",
+      "accountLabel": "azure",
+      "params": {
+        "operation": "upload",
+        "fileName": "file.csv",
+        "remoteFileName": "test.csv",
+        "containerName": "container",
+        "showFileLink": true,
+        "failOnError": false
+      },
+      "id": "76d98803-4345-4f25-a890-4c5fe4ebe1d5"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [
