@@ -159,6 +159,10 @@
         {
           "target": "CEP Não Encontrado #Py2q38#",
           "jsonPath": "$.[?(@.body.erro == \"true\")]"
+        },
+        {
+          "target": "condition-1",
+          "jsonPath": "$"
         }
       ],
       "otherwise": "CEP Encontrado com Sucesso #0UTtmO#"
@@ -187,6 +191,31 @@
         "customErrorEnabled": false
       },
       "id": "c369090d-29a8-407c-8f5c-12db335d7f84"
+    }
+  ],
+  "condition-1": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "275c842a-c7eb-4ebf-a5be-9845503fbea5"
+    },
+    {
+      "type": "connector",
+      "name": "wget-connector",
+      "stepName": "WGet (Download HTTP)",
+      "params": {
+        "url": "https://sendgrid.com/docs/API_Reference/Web_API_v3/Mail/index.html",
+        "localSave": false,
+        "isBinary": false,
+        "fileName": "file.html",
+        "failOnError": false
+      },
+      "id": "689a0703-69af-4f80-b85d-b7f0aad2115a"
     }
   ],
   "CEP Encontrado com Sucesso #0UTtmO#": [

@@ -14,6 +14,9 @@
     ├── when-CEP Não Encontrado #Py2q38#
     │   ├── 00-Log de Erro na Busca cep (log-connector)
     │   └── 01-Throw Error (throw-error-connector)
+    ├── when-condition-1
+    │   ├── 00-Log (log-connector)
+    │   └── 01-WGet (Download HTTP) (wget-connector)
     └── otherwise-CEP Encontrado com Sucesso #0UTtmO#
         ├── 00-Log de Sucesso na Busca CEP (log-connector)
         ├── 01-Tratamento de Dados (json-generator-connector)
