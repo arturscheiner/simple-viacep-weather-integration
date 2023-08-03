@@ -7,7 +7,8 @@
 ├── 03-Recebe o CEP e adiciona o timestamp da requisição (json-generator-connector)
 └── 04-Block-Execution (block-execution-connector)
     ├── onException
-    │   └── 00-Throw Error (throw-error-connector)
+    │   ├── 00-Throw Error (throw-error-connector)
+    │   └── 01-JSON Path Transformer (json-path-transformer)
     └── onProcess
         └── 00-Log (log-connector)
 

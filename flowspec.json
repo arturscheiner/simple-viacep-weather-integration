@@ -90,6 +90,13 @@
         "customErrorEnabled": false
       },
       "id": "823073a2-a94b-4dba-a326-1fd82c2e171b"
+    },
+    {
+      "type": "json-path-transformer",
+      "stepName": "JSON Path Transformer",
+      "jsonPath": "$.store.books[?(@.title=='IT')]",
+      "failOnError": false,
+      "id": "548788f6-5f2f-4204-b06e-420bcb5fdc0f"
     }
   ]
 }
