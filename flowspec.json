@@ -182,7 +182,7 @@
     {
       "type": "connector",
       "name": "log-connector",
-      "stepName": "Log depois do block",
+      "stepName": "Log depois do block do start",
       "params": {
         "logLevel": "ERROR",
         "message": "Error processing message {{ message.$.myField }}"

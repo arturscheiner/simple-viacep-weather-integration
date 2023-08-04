@@ -1,4 +1,4 @@
-# Step Name -> Log depois do block
+# Step Name -> Log depois do block do start
 ## Connector Denominator -> log-connector
 
 ## Description
@@ -24,5 +24,5 @@ Error processing message {{ message.$.myField }}
 ## RAW Object
 
 ```
-{"type":"connector","name":"log-connector","stepName":"Log depois do block","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"ddd8119e-070b-47f8-b438-be2f70182b17","__documentation__":""}
+{"type":"connector","name":"log-connector","stepName":"Log depois do block do start","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"ddd8119e-070b-47f8-b438-be2f70182b17","__documentation__":""}
 ```
