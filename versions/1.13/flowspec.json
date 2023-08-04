@@ -201,6 +201,45 @@
         "message": "Error processing message {{ message.$.myField }}"
       },
       "id": "a7756975-b029-40f5-a7bb-23234f15dcaf"
+    },
+    {
+      "type": "connector",
+      "name": "block-execution-connector",
+      "stepName": "Block-Execution",
+      "params": {
+        "onProcess": "b97d1510-fef9-4485-96f5-dd4e232fac58-onProcessTrack",
+        "onException": "b97d1510-fef9-4485-96f5-dd4e232fac58-onExceptionTrack"
+      },
+      "id": "b97d1510-fef9-4485-96f5-dd4e232fac58"
+    }
+  ],
+  "b97d1510-fef9-4485-96f5-dd4e232fac58-onProcessTrack": [
+    {
+      "type": "connector",
+      "name": "Azure-Blob-Storage-Connector",
+      "stepName": "Blob Storage (Azure)",
+      "accountLabel": "azure",
+      "params": {
+        "operation": "upload",
+        "fileName": "file.csv",
+        "remoteFileName": "test.csv",
+        "containerName": "container",
+        "showFileLink": true,
+        "failOnError": false
+      },
+      "id": "6e7d651d-848d-4947-b80c-5674b8ca2808"
+    }
+  ],
+  "b97d1510-fef9-4485-96f5-dd4e232fac58-onExceptionTrack": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "0e8c78e2-1add-448a-91df-8d6061aed071"
     }
   ],
   "3621921d-71ac-4c22-b5a8-8225c7d9e106-onExceptionTrack": [
