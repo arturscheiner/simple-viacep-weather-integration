@@ -168,6 +168,69 @@
         "message": "Error processing message {{ message.$.myField }}"
       },
       "id": "47c0a3c8-4e8c-436e-92ae-a160a85f80af"
+    },
+    {
+      "type": "connector",
+      "name": "block-execution-connector",
+      "stepName": "Block-Execution",
+      "params": {
+        "onProcess": "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack",
+        "onException": "3621921d-71ac-4c22-b5a8-8225c7d9e106-onExceptionTrack"
+      },
+      "id": "3621921d-71ac-4c22-b5a8-8225c7d9e106"
+    }
+  ],
+  "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack": [
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "a7756975-b029-40f5-a7bb-23234f15dcaf"
+    }
+  ],
+  "3621921d-71ac-4c22-b5a8-8225c7d9e106-onExceptionTrack": [
+    {
+      "type": "connector",
+      "name": "throw-error-connector",
+      "stepName": "Throw Error",
+      "params": {
+        "errorMessage": "Error occurred.",
+        "errorCode": 500,
+        "customErrorEnabled": false
+      },
+      "id": "823073a2-a94b-4dba-a326-1fd82c2e171b"
+    },
+    {
+      "type": "json-path-transformer",
+      "stepName": "JSON Path Transformer",
+      "jsonPath": "$.store.books[?(@.title=='IT')]",
+      "failOnError": false,
+      "id": "548788f6-5f2f-4204-b06e-420bcb5fdc0f"
+    },
+    {
+      "type": "connector",
+      "name": "throw-error-connector",
+      "stepName": "Throw Error",
+      "params": {
+        "errorMessage": "Error occurred.",
+        "errorCode": 500,
+        "customErrorEnabled": false
+      },
+      "id": "f14c1e0b-5cc3-4199-92ab-ad3a1c4c3960"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "d0e34384-c138-4673-b745-d5a03e0549fa"
     }
   ]
 }
