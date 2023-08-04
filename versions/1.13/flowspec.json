@@ -211,6 +211,17 @@
         "onException": "b97d1510-fef9-4485-96f5-dd4e232fac58-onExceptionTrack"
       },
       "id": "b97d1510-fef9-4485-96f5-dd4e232fac58"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log depois do block dentro do block",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "47e2da92-e86d-400b-a6bb-7f307394cc75",
+      "__documentation__": ""
     }
   ],
   "b97d1510-fef9-4485-96f5-dd4e232fac58-onProcessTrack": [

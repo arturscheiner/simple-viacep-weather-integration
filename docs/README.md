@@ -11,19 +11,20 @@
 ├── 09-Log (log-connector)
 ├── 10-Log (log-connector)
 ├── 11-Block-Execution (block-execution-connector)
-│   ├── onProcess
-│   │   ├── 00-Log (log-connector)
-│   │   └── 01-Block-Execution (block-execution-connector)
-│   │       ├── onProcess
-│   │       │   ├── 00-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
-│   │       │   └── 01-Log (log-connector)
-│   │       └── onException
-│   │           └── 00-Log (log-connector)
-│   └── onException
-│       ├── 00-Throw Error (throw-error-connector)
-│       ├── 01-JSON Path Transformer (json-path-transformer)
-│       ├── 02-Throw Error (throw-error-connector)
-│       └── 03-Log (log-connector)
+│   ├── onException
+│   │   ├── 00-Throw Error (throw-error-connector)
+│   │   ├── 01-JSON Path Transformer (json-path-transformer)
+│   │   ├── 02-Throw Error (throw-error-connector)
+│   │   └── 03-Log (log-connector)
+│   └── onProcess
+│       ├── 00-Log (log-connector)
+│       ├── 01-Block-Execution (block-execution-connector)
+│       │   ├── onException
+│       │   │   └── 00-Log (log-connector)
+│       │   └── onProcess
+│       │       ├── 00-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
+│       │       └── 01-Log (log-connector)
+│       └── 02-Log depois do block dentro do block (log-connector)
 └── 12-Log depois do block (log-connector)
 
 ```
