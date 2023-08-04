@@ -228,6 +228,16 @@
         "failOnError": false
       },
       "id": "6e7d651d-848d-4947-b80c-5674b8ca2808"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "6ed3aa2e-42a6-49a7-9e99-55cd686e6d2d"
     }
   ],
   "b97d1510-fef9-4485-96f5-dd4e232fac58-onExceptionTrack": [

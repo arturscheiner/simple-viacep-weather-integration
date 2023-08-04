@@ -14,10 +14,11 @@
 │   ├── onProcess
 │   │   ├── 00-Log (log-connector)
 │   │   └── 01-Block-Execution (block-execution-connector)
-│   │       ├── onException
-│   │       │   └── 00-Log (log-connector)
-│   │       └── onProcess
-│   │           └── 00-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
+│   │       ├── onProcess
+│   │       │   ├── 00-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
+│   │       │   └── 01-Log (log-connector)
+│   │       └── onException
+│   │           └── 00-Log (log-connector)
 │   └── onException
 │       ├── 00-Throw Error (throw-error-connector)
 │       ├── 01-JSON Path Transformer (json-path-transformer)
