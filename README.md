@@ -13,12 +13,12 @@
 ├── 09-Log (log-connector)
 ├── 10-Log (log-connector)
 └── 11-Block-Execution (block-execution-connector)
-    ├── onProcess
-    │   └── 00-Log (log-connector)
-    └── onException
-        ├── 00-Throw Error (throw-error-connector)
-        ├── 01-JSON Path Transformer (json-path-transformer)
-        ├── 02-Throw Error (throw-error-connector)
-        └── 03-Log (log-connector)
+    ├── onException
+    │   ├── 00-Throw Error (throw-error-connector)
+    │   ├── 01-JSON Path Transformer (json-path-transformer)
+    │   ├── 02-Throw Error (throw-error-connector)
+    │   └── 03-Log (log-connector)
+    └── onProcess
+        └── 00-Log (log-connector)
 
 ```
