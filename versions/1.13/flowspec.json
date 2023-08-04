@@ -178,6 +178,17 @@
         "onException": "3621921d-71ac-4c22-b5a8-8225c7d9e106-onExceptionTrack"
       },
       "id": "3621921d-71ac-4c22-b5a8-8225c7d9e106"
+    },
+    {
+      "type": "connector",
+      "name": "log-connector",
+      "stepName": "Log depois do block",
+      "params": {
+        "logLevel": "ERROR",
+        "message": "Error processing message {{ message.$.myField }}"
+      },
+      "id": "ddd8119e-070b-47f8-b438-be2f70182b17",
+      "__documentation__": ""
     }
   ],
   "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack": [
