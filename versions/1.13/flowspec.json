@@ -187,15 +187,6 @@
         "message": "Error processing message {{ message.$.myField }}"
       },
       "id": "ddd8119e-070b-47f8-b438-be2f70182b17"
-    },
-    {
-      "type": "connector",
-      "name": "json-transformer-connector",
-      "stepName": "JSON Transformer",
-      "params": {
-        "failOnError": false
-      },
-      "id": "c7680667-e5a7-484c-8ce8-d93bee1efce0"
     }
   ],
   "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack": [

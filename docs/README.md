@@ -18,12 +18,12 @@
 │   │   │   │   ├── 00-Blob Storage (Azure) (Azure-Blob-Storage-Connector)
 │   │   │   │   ├── 01-Log (log-connector)
 │   │   │   │   └── 02-For Each (for-each-connector)
-│   │   │   │       ├── onProcess
-│   │   │   │       │   ├── 00-Template Transformer (template-transformer)
-│   │   │   │       │   ├── 01-JSON Transformer (json-transformer-connector)
-│   │   │   │       │   └── 02-Transformer (JOLT) (transformer)
-│   │   │   │       └── onException
-│   │   │   │           └── 00-JSON String to JSON Transformer (json-string-to-json-transformer)
+│   │   │   │       ├── onException
+│   │   │   │       │   └── 00-JSON String to JSON Transformer (json-string-to-json-transformer)
+│   │   │   │       └── onProcess
+│   │   │   │           ├── 00-Template Transformer (template-transformer)
+│   │   │   │           ├── 01-JSON Transformer (json-transformer-connector)
+│   │   │   │           └── 02-Transformer (JOLT) (transformer)
 │   │   │   └── onException
 │   │   │       └── 00-Log (log-connector)
 │   │   └── 02-Log depois do block dentro do block (log-connector)
@@ -32,7 +32,6 @@
 │       ├── 01-JSON Path Transformer (json-path-transformer)
 │       ├── 02-Throw Error (throw-error-connector)
 │       └── 03-Log (log-connector)
-├── 12-Log depois do block do start (log-connector)
-└── 13-JSON Transformer (json-transformer-connector)
+└── 12-Log depois do block do start (log-connector)
 
 ```
