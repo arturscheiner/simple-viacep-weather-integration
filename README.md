@@ -34,6 +34,8 @@
 │       ├── 01-JSON Path Transformer (json-path-transformer)
 │       ├── 02-Throw Error (throw-error-connector)
 │       └── 03-Log (log-connector)
-└── 12-Log depois do block do start (log-connector)
+├── 12-Log depois do block do start (log-connector)
+├── 13-JSON Transformer (json-transformer-connector)
+└── 14-JSON String to JSON Transformer (json-string-to-json-transformer)
 
 ```
