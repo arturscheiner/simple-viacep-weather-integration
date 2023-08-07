@@ -24,5 +24,5 @@ Error processing message {{ message.$.myField }}
 ## RAW Object
 
 ```
-{"type":"connector","name":"log-connector","stepName":"Log depois do block dentro do block","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"47e2da92-e86d-400b-a6bb-7f307394cc75","__documentation__":""}
+{"type":"connector","name":"log-connector","stepName":"Log depois do block dentro do block","params":{"logLevel":"ERROR","message":"Error processing message {{ message.$.myField }}"},"id":"47e2da92-e86d-400b-a6bb-7f307394cc75"}
 ```
