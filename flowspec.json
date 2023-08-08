@@ -203,6 +203,30 @@
       "jsonFieldPath": "payload",
       "preserveOriginal": true,
       "id": "896f6638-eb9a-4eb9-9eb9-dda94faf34f8"
+    },
+    {
+      "type": "json-to-json-string-transformer",
+      "stepName": "JSON to JSON String Transformer",
+      "jsonFieldPath": "payload",
+      "preserveOriginal": true,
+      "id": "02ec16b9-594b-4fa8-bf1d-cf9bb75353fa"
+    },
+    {
+      "type": "connector",
+      "name": "stream-excel-connector",
+      "stepName": "Stream Excel",
+      "params": {
+        "fileName": "file.xlsx",
+        "readSpecificColumnsAsString": "B,D,F",
+        "maxFractionalDigits": 5,
+        "sheetName": "Plan1",
+        "itemIdentifier": "A",
+        "parallel": false,
+        "failOnError": false,
+        "onProcess": "fed33eab-32f0-40fc-ae7e-87ba0773b0c4-onProcessTrack",
+        "onException": "fed33eab-32f0-40fc-ae7e-87ba0773b0c4-onExceptionTrack"
+      },
+      "id": "fed33eab-32f0-40fc-ae7e-87ba0773b0c4"
     }
   ],
   "3621921d-71ac-4c22-b5a8-8225c7d9e106-onProcessTrack": [
@@ -373,6 +397,74 @@
         "message": "Error processing message {{ message.$.myField }}"
       },
       "id": "d0e34384-c138-4673-b745-d5a03e0549fa"
+    }
+  ],
+  "fed33eab-32f0-40fc-ae7e-87ba0773b0c4-onProcessTrack": [
+    {
+      "type": "connector",
+      "name": "excel-connector",
+      "stepName": "Excel",
+      "params": {
+        "operation": "read",
+        "cell": "A:1",
+        "cells": "[\"A:1\", \"B:2\", \"C:6\"]",
+        "sheets": "[\"Planilha2\", \"Planilha4\"]",
+        "cellValue": "example",
+        "excelFullPath": "/Users/example.xlsx",
+        "jsonData": "[{\"src\":\"Images/Sun.png\",\"name\":\"sun1\",\"hOffset\":250,\"vOffset\":250,\"alignment\":\"center\"},{\"src\":\"Images/Sun.png\",\"name\":\"sun1\",\"hOffset\":250,\"vOffset\":250,\"alignment\":\"center\"},{\"src\":\"Images/Sun.png\",\"name\":\"sun1\",\"hOffset\":250,\"vOffset\":250,\"alignment\":\"center\"},{\"src\":\"Images/Sun.png\",\"name\":\"sun1\",\"hOffset\":250,\"vOffset\":250,\"alignment\":\"center\"},{\"src\":\"Images/Sun.png\",\"name\":\"sun1\",\"hOffset\":250,\"vOffset\":250,\"alignment\":\"center\"}]",
+        "sheetName": "Planilha1",
+        "readAllSheets": false,
+        "failOnError": true
+      },
+      "id": "28345700-242f-4db7-ace6-4b788d57a242"
+    },
+    {
+      "type": "connector",
+      "name": "file-writer-connector",
+      "stepName": "File Writer",
+      "params": {
+        "fileName": "data.csv",
+        "inputData": "{{ message.data }}",
+        "fileExistsPolicy": "append"
+      },
+      "id": "322c2d90-cd9a-46ff-b8ac-b90cfc3c902a"
+    },
+    {
+      "type": "connector",
+      "name": "gzip-connector-v2",
+      "stepName": "GZIP V2 (Compress and Decompress)",
+      "params": {
+        "operation": "compress_fields",
+        "failOnError": false,
+        "jsonField": "body.test",
+        "preserveOriginal": false,
+        "isBinary": false
+      },
+      "id": "847c960b-6902-493a-a504-798a30267fcf"
+    }
+  ],
+  "fed33eab-32f0-40fc-ae7e-87ba0773b0c4-onExceptionTrack": [
+    {
+      "type": "connector",
+      "name": "file-reader-connector",
+      "stepName": "File Reader",
+      "params": {
+        "fileName": "data.csv",
+        "maxSizeFile": 1048576,
+        "isBinary": false
+      },
+      "id": "33b35c05-1899-4ab3-bd77-1b02fa401069"
+    },
+    {
+      "type": "connector",
+      "name": "xml-validator-connector",
+      "stepName": "XML Schema Validator",
+      "params": {
+        "xmlFileName": "",
+        "xsds": "[]",
+        "failOnError": false
+      },
+      "id": "f41561c6-3a83-4c9f-a4e2-e2c2accdcc4d"
     }
   ]
 }
