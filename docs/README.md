@@ -37,13 +37,13 @@
 ├── 14-JSON String to JSON Transformer (json-string-to-json-transformer)
 ├── 15-JSON to JSON String Transformer (json-to-json-string-transformer)
 ├── 16-Stream Excel (stream-excel-connector)
-│   ├── onException
-│   │   ├── 00-File Reader (file-reader-connector)
-│   │   └── 01-XML Schema Validator (xml-validator-connector)
-│   └── onProcess
-│       ├── 00-Excel (excel-connector)
-│       ├── 01-File Writer (file-writer-connector)
-│       └── 02-GZIP V2 (Compress and Decompress) (gzip-connector-v2)
+│   ├── onProcess
+│   │   ├── 00-Excel (excel-connector)
+│   │   ├── 01-File Writer (file-writer-connector)
+│   │   └── 02-GZIP V2 (Compress and Decompress) (gzip-connector-v2)
+│   └── onException
+│       ├── 00-File Reader (file-reader-connector)
+│       └── 01-XML Schema Validator (xml-validator-connector)
 ├── 17-XML Schema Validator (xml-validator-connector)
 ├── 18-Excel (excel-connector)
 ├── 19-CSV to Excel (csv-to-excel-connector)
