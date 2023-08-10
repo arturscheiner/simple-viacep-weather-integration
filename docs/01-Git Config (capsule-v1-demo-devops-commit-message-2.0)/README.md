@@ -1,11 +1,15 @@
 # Step Name -> Git Config
-## Connector Denominator -> capsule-v1-demo-devops-commit-message-2.0
+## Component Denominator -> capsule-v1-demo-devops-commit-message-2.0
 
-## Description
+## Component Description
 
 Digibee Capsules are reusable components that can be used or created by any user of the Platform by applying the same visual development model designed in the pipeline creation, providing a reusable, secure, validated and evolving business logic.
 
 ## Component Configuration Details
+### Documentation
+
+Esta cápsula é utilizada apenas para definir parâmetros utilizados pelo script de sincronização de repositório, dgb-gs.
+
 ### Parameters
 
 * commit_description
