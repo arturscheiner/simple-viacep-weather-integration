@@ -10,7 +10,7 @@ Check this component official documentation: [json-generator-connector](https://
 ## Component Configuration Details
 ### Documentation
 
---DOCUMENTATION--
+Aqui criamos um payload mockado, que é utilizado para a execução do fluxo do pipeline.
 
 ### Parameters
 

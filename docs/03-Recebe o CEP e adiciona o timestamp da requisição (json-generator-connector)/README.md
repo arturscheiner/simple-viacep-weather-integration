@@ -10,7 +10,7 @@ Check this component official documentation: [json-generator-connector](https://
 ## Component Configuration Details
 ### Documentation
 
---DOCUMENTATION--
+O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
 
 ### Parameters
 
