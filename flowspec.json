@@ -56,7 +56,8 @@
       },
       "onProcessTrack": null,
       "onExceptionTrack": null,
-      "id": "9c8c71b1-76d3-4d46-a69b-298d83dcb7d7"
+      "id": "9c8c71b1-76d3-4d46-a69b-298d83dcb7d7",
+      "__documentation__": "Esse step existe com o objetivo de adicionar o timestamp da requisição ao \"userinfo\". Além disso, o componente também adiciona ao payload o cep e a chave \"requestHour\" mostrando apenas a base horária. Esse valor será utilizado posteriormente para criarmos a mensagem de \"greetings\"."
     },
     {
       "type": "connector",
