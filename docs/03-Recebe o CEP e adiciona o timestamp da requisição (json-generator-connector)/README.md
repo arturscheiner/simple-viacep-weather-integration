@@ -10,7 +10,7 @@ Check this component official documentation: [json-generator-connector](https://
 ## Component Configuration Details
 ### Documentation
 
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
+Esse step existe com o objetivo de adicionar o timestamp da requisição ao "userinfo". Além disso, o componente também adiciona ao payload o cep e a chave "requestHour" mostrando apenas a base horária. Esse valor será utilizado posteriormente para criarmos a mensagem de "greetings".
 
 ### Parameters
 
@@ -45,5 +45,5 @@ false
 ## RAW Object
 
 ```
-{"name":"json-generator-connector","type":"connector","stepName":"Recebe o CEP e adiciona o timestamp da requisição","params":{"json":"{\n \"userinfo\" : {\n \"cep\" : {{ message.queryAndPath.cep }},\n \"requestTimestamp\": {{ NOW() }}\n },\n \"body\": {\n \"cep\" : {{ message.queryAndPath.cep }},\n \"requestTimestamp\": {{ NOW() }}, \n \"requestHour\": {{ FORMATDATE(NOW(), \"timestamp\", \"HH\", null, \"GMT-3\", \"pt-BR\", null) }}\n }\n\n}\n\n\n### Se existe consulta (marca data e hora da consulta) se não existe, cadastra","failOnError":false},"onProcessTrack":null,"onExceptionTrack":null,"id":"9c8c71b1-76d3-4d46-a69b-298d83dcb7d7"}
+{"name":"json-generator-connector","type":"connector","stepName":"Recebe o CEP e adiciona o timestamp da requisição","params":{"json":"{\n \"userinfo\" : {\n \"cep\" : {{ message.queryAndPath.cep }},\n \"requestTimestamp\": {{ NOW() }}\n },\n \"body\": {\n \"cep\" : {{ message.queryAndPath.cep }},\n \"requestTimestamp\": {{ NOW() }}, \n \"requestHour\": {{ FORMATDATE(NOW(), \"timestamp\", \"HH\", null, \"GMT-3\", \"pt-BR\", null) }}\n }\n\n}\n\n\n### Se existe consulta (marca data e hora da consulta) se não existe, cadastra","failOnError":false},"onProcessTrack":null,"onExceptionTrack":null,"id":"9c8c71b1-76d3-4d46-a69b-298d83dcb7d7","__documentation__":"Esse step existe com o objetivo de adicionar o timestamp da requisição ao \"userinfo\". Além disso, o componente também adiciona ao payload o cep e a chave \"requestHour\" mostrando apenas a base horária. Esse valor será utilizado posteriormente para criarmos a mensagem de \"greetings\"."}
 ```
