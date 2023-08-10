@@ -60,6 +60,16 @@
       "__documentation__": "Esse step existe com o objetivo de adicionar o timestamp da requisição ao \"userinfo\". Além disso, o componente também adiciona ao payload o cep e a chave \"requestHour\" mostrando apenas a base horária. Esse valor será utilizado posteriormente para criarmos a mensagem de \"greetings\"."
     },
     {
+      "name": "json-generator-connector",
+      "type": "connector",
+      "stepName": "JSON Generator",
+      "params": {
+        "json": "{}",
+        "failOnError": false
+      },
+      "id": "f418aa9f-e4b1-4ac4-b13d-7b083546f0b6"
+    },
+    {
       "type": "connector",
       "name": "script-connector",
       "stepName": "Adiciona o \"greetings\" com base na hora de entrada.",
