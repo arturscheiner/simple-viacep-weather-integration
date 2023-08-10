@@ -30,7 +30,8 @@
         "commit_summary": "Novo commit no sistema listado novo",
         "commit_description": "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail."
       },
-      "id": "8f735890-29ee-478a-9dd7-93ccecba7618"
+      "id": "8f735890-29ee-478a-9dd7-93ccecba7618",
+      "__documentation__": "Esta cápsula é utilizada apenas para definir parâmetros utilizados pelo script de sincronização de repositório, dgb-gs."
     },
     {
       "type": "connector",
