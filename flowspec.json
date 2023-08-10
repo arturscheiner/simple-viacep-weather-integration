@@ -8,7 +8,8 @@
         "json": "{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"12230-087\"\n }\n}",
         "failOnError": false
       },
-      "id": "3848aec7-f639-4036-a735-0de702ce8e05"
+      "id": "3848aec7-f639-4036-a735-0de702ce8e05",
+      "__documentation__": "Aqui criamos um payload mockado, que é utilizado para a execução do fluxo do pipeline."
     },
     {
       "type": "capsule",
@@ -41,7 +42,8 @@
         "showSendEventLog": false,
         "stopOnError": false
       },
-      "id": "4df87046-4b5e-4b9a-89ef-ec7eb4ee5ea3"
+      "id": "4df87046-4b5e-4b9a-89ef-ec7eb4ee5ea3",
+      "__documentation__": "Envia o payload para a fila de eventos que realiza a bilhetagem."
     },
     {
       "name": "json-generator-connector",

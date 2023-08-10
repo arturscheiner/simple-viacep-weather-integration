@@ -32,5 +32,5 @@ false
 ## RAW Object
 
 ```
-{"name":"json-generator-connector","type":"connector","stepName":"Mocked Payload Data","params":{"json":"{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"12230-087\"\n }\n}","failOnError":false},"id":"3848aec7-f639-4036-a735-0de702ce8e05"}
+{"name":"json-generator-connector","type":"connector","stepName":"Mocked Payload Data","params":{"json":"{\n \"data\": {{ NOW() }},\n \"queryAndPath\":{\n \"cep\": \"12230-087\"\n }\n}","failOnError":false},"id":"3848aec7-f639-4036-a735-0de702ce8e05","__documentation__":"Aqui criamos um payload mockado, que é utilizado para a execução do fluxo do pipeline."}
 ```

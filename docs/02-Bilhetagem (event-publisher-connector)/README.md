@@ -34,5 +34,5 @@ false
 ## RAW Object
 
 ```
-{"type":"connector","stepName":"Bilhetagem","name":"event-publisher-connector","params":{"eventName":"{{ DEFAULT(message.eventName, \"billing-control\") }}","body":"{{ message.$ }}","showSendEventLog":false,"stopOnError":false},"id":"4df87046-4b5e-4b9a-89ef-ec7eb4ee5ea3"}
+{"type":"connector","stepName":"Bilhetagem","name":"event-publisher-connector","params":{"eventName":"{{ DEFAULT(message.eventName, \"billing-control\") }}","body":"{{ message.$ }}","showSendEventLog":false,"stopOnError":false},"id":"4df87046-4b5e-4b9a-89ef-ec7eb4ee5ea3","__documentation__":"Envia o payload para a fila de eventos que realiza a bilhetagem."}
 ```
