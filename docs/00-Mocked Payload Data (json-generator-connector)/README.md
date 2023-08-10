@@ -1,13 +1,17 @@
 # Step Name -> Mocked Payload Data
-## Connector Denominator -> json-generator-connector
+## Component Denominator -> json-generator-connector
 
-## Description
+## Component Description
 
 JSON Generator (Mock) creates a JSON object. This component accepts any input.
 
 Check this component official documentation: [json-generator-connector](https://docs.digibee.com/documentation/components/tools/json-generator "Digibee json-generator-connector documentation")
 
 ## Component Configuration Details
+### Documentation
+
+--DOCUMENTATION--
+
 ### Parameters
 
 * JSON
