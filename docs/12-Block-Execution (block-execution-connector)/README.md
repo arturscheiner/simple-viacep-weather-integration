@@ -1,17 +1,13 @@
 # Step Name -> Block-Execution
-## Component Denominator -> block-execution-connector
+## Connector Denominator -> block-execution-connector
 
-## Component Description
+## Description
 
 Block Execution declares a part of a pipeline for a specific purpose.
 
 Check this component official documentation: [block-execution-connector](https://docs.digibee.com/documentation/components/logic/block-execution "Digibee block-execution-connector documentation")
 
 ## Component Configuration Details
-### Documentation
-
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
-
 ### Parameters
 
 * onException

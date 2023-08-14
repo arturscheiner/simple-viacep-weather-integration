@@ -1,17 +1,13 @@
 # Step Name -> Transformer (JOLT)
-## Component Denominator -> transformer
+## Connector Denominator -> transformer
 
-## Component Description
+## Description
 
 Transformer (JOLT) allows the manipulation of a JSON through JOLT technology.
 
 Check this component official documentation: [transformer](https://docs.digibee.com/documentation/components/tools/transformer-jolt "Digibee transformer documentation")
 
 ## Component Configuration Details
-### Documentation
-
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
-
 ### Parameters
 
 * Type Properties

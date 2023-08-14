@@ -1,17 +1,13 @@
 # Step Name -> Recupera o userinfo da sessao
-## Component Denominator -> generic
+## Connector Denominator -> generic
 
-## Component Description
+## Description
 
 Digibee components are a powerful way to simplify the process of building integration flows. By using pre-built connectors and logic components, you can quickly and easily create complex integrations that connect different applications and services.
 
 Check Digibee's official documentation: [generic](https://docs.digibee.com/documentation "Digibee documentation")
 
 ## Component Configuration Details
-### Documentation
-
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
-
 ### Parameters
 
 * fields

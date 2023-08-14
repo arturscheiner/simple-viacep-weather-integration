@@ -1,17 +1,13 @@
 # Step Name -> Adiciona o "greetings" com base na hora de entrada.
-## Component Denominator -> script-connector
+## Connector Denominator -> script-connector
 
-## Component Description
+## Description
 
 Script allows the execution of javascript code extracts (javascript is also known as ECMAScript).
 
 Check this component official documentation: [script-connector](https://docs.digibee.com/documentation/components/tools/script "Digibee script-connector documentation")
 
 ## Component Configuration Details
-### Documentation
-
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
-
 ### Parameters
 
 * code

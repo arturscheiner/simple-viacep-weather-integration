@@ -1,17 +1,13 @@
 # Step Name -> Recebe o CEP e adiciona o timestamp da requisição
-## Component Denominator -> json-generator-connector
+## Connector Denominator -> json-generator-connector
 
-## Component Description
+## Description
 
 JSON Generator (Mock) creates a JSON object. This component accepts any input.
 
 Check this component official documentation: [json-generator-connector](https://docs.digibee.com/documentation/components/tools/json-generator "Digibee json-generator-connector documentation")
 
 ## Component Configuration Details
-### Documentation
-
-Esse step existe com o objetivo de adicionar o timestamp da requisição ao "userinfo". Além disso, o componente também adiciona ao payload o cep e a chave "requestHour" mostrando apenas a base horária. Esse valor será utilizado posteriormente para criarmos a mensagem de "greetings".
-
 ### Parameters
 
 * JSON

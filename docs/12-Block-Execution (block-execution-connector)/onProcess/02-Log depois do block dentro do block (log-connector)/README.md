@@ -1,17 +1,13 @@
 # Step Name -> Log depois do block dentro do block
-## Component Denominator -> log-connector
+## Connector Denominator -> log-connector
 
-## Component Description
+## Description
 
 Log allows the creation of log registers inside a pipeline. It helps in the generation of steps traceability when you want so.
 
 Check this component official documentation: [log-connector](https://docs.digibee.com/documentation/components/tools/log "Digibee log-connector documentation")
 
 ## Component Configuration Details
-### Documentation
-
-O parâmetro referente à documentação descritiva do componente não foi preenchido ou está indisponível para este componente.
-
 ### Parameters
 
 * logLevel
