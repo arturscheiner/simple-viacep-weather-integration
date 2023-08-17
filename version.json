@@ -2,9 +2,9 @@
   "name" : "simple-viacep-weather-integration",
   "id" : "71ccd849-604b-4dd0-ad37-ad68fbb9e562",
   "version" : "1.13",
-  "checksum" : "81169",
-  "summary" : "Novo commit no sistema listado novo",
-  "description" : "Ultimately, the trick to structuring an exceptional commit message is to find the proper balance between brevity and detail.",
+  "checksum" : "da39a",
+  "summary" : "Version 1.13.81169",
+  "description" : "Commit Message Capsule not configured for this Pipeline. The default summary and description are being used.",
   "size": "SMALL",
   "replicas": "1",
   "consumers": "10"
